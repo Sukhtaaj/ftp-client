@@ -6,6 +6,8 @@ import _commands._Login
 import _commands._Logout
 import _commands._List
 import _commands._Exit
+import _commands._ListLocal
+import _commands._PutMultiple
 
 from paramiko import SSHException, AuthenticationException
 from pysftp.exceptions import (CredentialException, ConnectionException,
