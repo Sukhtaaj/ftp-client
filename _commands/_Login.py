@@ -26,7 +26,7 @@ class Command:
         if isinstance(response, str):
             print response
         else:
-            print "Logged in successfully"
+            print "Logged in successfully\n"
             self._connection_object = response
 
         self._update_prompt()
