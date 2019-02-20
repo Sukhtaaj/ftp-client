@@ -6,20 +6,22 @@ import _commands._Login
 import _commands._Logout
 import _commands._List
 import _commands._Exit
+import _commands._Chdir
 
 from paramiko import (SSHException, AuthenticationException, 
                       PasswordRequiredException)
 from pysftp.exceptions import (CredentialException, ConnectionException,
                                HostKeysException)
 
-class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _commands._List.Command, _commands._Exit.Command):
+class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _commands._List.Command, _commands._Exit.Command,
+                  _commands._Chdir.Command):
     """
     FTP client command line utility.
     """
     def __init__(self, debug=False):
         Cmd.__init__(self)
         self.intro = ('SFTP Client. Enter help or ? to see available actions')
-        self.prompt = 'FTP > '
+        self.prompt = 'SFTP > '
         self._ftp_client = pysftp
         self._connection_object = None
 
@@ -28,7 +30,7 @@ class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _com
         self._password = None
 
     def _update_prompt(self):
-        prompt = '\nFTP'
+        prompt = 'SFTP'
         if self._connection_object is not None:
             if self._connection_object._transport.hostname is not None and self._connection_object._tconnect['username'] is not None:
                 prompt = '{} {}@{}'.format(prompt, self._connection_object._tconnect['username'], self._connection_object._transport.hostname)
