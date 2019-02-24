@@ -1,5 +1,5 @@
 class Command:
-    def do_createdirectory(self, input_directory):
+    def do_mkdir(self, input_directory):
         """
         Command to create directory with name of new directory
 
