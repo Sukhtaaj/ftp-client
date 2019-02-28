@@ -10,12 +10,18 @@ class Command:
         cnopts.hostkeys = None
 
         print "Press Enter for selecting default values\n"
-
-        while not self._hostname:
-            self._hostname = raw_input('Host (default: test.rebex.net):') or 'test.rebex.net'
         
-        while not self._username:
-            self._username = raw_input('Username(default= demo): ') or 'demo'
+        response = raw_input("Use saved connection? (y/n): ")
+
+        if response == 'y' or  response == 'Y':
+            self.pull_connections()
+
+        else:
+            while not self._hostname:
+                self._hostname = raw_input('Host (default: test.rebex.net):') or 'test.rebex.net'
+            
+            while not self._username:
+                self._username = raw_input('Username(default= demo): ') or 'demo'
 
         while not self._password:
             self._password = getpass.getpass('Password(default= password): ') or 'password'
