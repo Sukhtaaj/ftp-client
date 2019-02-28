@@ -11,25 +11,18 @@ import _commands._CreateDirectory
 import _commands._Rename
 import _commands._Llist
 import _commands._Lrename
-<<<<<<< HEAD
 import _commands._Mkdir
-=======
 import _commands._Put
 import _commands._ConnectionInfo
 import _commands._delete
 import _commands._getmultiple
->>>>>>> ef8570350abf626ae3092ec7de4353969423dd3a
 
 from paramiko import (SSHException, AuthenticationException, 
                       PasswordRequiredException)
 from pysftp.exceptions import (CredentialException, ConnectionException,
                                HostKeysException)
 
-<<<<<<< HEAD
-class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _commands._List.Command, _commands._Exit.Command, _commands._Chdir.Command, _commands._CreateDirectory.Command, _commands._Rename.Command, _commands._Llist.Command,  _commands._Lrename.Command, _commands._Mkdir.Command):
-=======
-class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _commands._List.Command, _commands._Exit.Command, _commands._Chdir.Command, _commands._CreateDirectory.Command, _commands._Rename.Command, _commands._Llist.Command,  _commands._Lrename.Command, $_commands._Put.Command, _commands._ConnectionInfo.Command, _commands._delete.Command, _commands._getmultiple.Command)):
->>>>>>> ef8570350abf626ae3092ec7de4353969423dd3a
+class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _commands._List.Command, _commands._Exit.Command, _commands._Chdir.Command, _commands._CreateDirectory.Command, _commands._Rename.Command, _commands._Llist.Command,  _commands._Lrename.Command, _commands._Put.Command, _commands._ConnectionInfo.Command, _commands._delete.Command, _commands._getmultiple.Command):
     """
     FTP client command line utility.
     """
