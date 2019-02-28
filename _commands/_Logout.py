@@ -1,4 +1,3 @@
-
 class Command:
     def do_logout(self, *args):
         """
