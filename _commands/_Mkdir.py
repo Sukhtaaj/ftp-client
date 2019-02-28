@@ -1,4 +1,4 @@
-import sys
+import sys, os
 class Command:
     def do_mkdir(self, input_directory):
         """
@@ -7,15 +7,12 @@ class Command:
 	Args:
 		input_directory (str): Name of directory you want to create
         """
-#	self._perform_ftp_command('mkdir',input_directory,777)
-#	print(input_directory)
-#	response = self._perform_ftp_command('listdir')
-#	print(response)
-		directory_mode = input_directory.split(" ")
-		if len(directory_mode)!=2:
-			print "Mkdir command expects exactly two arguments"
+	if not input_directory:
+		print("you must enter in one argument")
+	else:
+		directory = self._perform_ftp_command('lexists',input_directory)
+		if directory:
+			print("duplicate found")
 		else:
-			try:
-				self.connection.mkdir(directory_mode[0], directory_mode[1])
-			except IOError as e:
-				print(e)
+			self._perform_ftp_command('mkdir',input_directory,777)
+			print(input_directory) #prints the name
