@@ -14,7 +14,7 @@ class Command():
             print("{}{}" + " " + host + " | " + username).format(i+1,")" )
             i = i+1
 
-        selection = input("Selection: ")
+        selection = input("\nSelection: ")
 
         text_file.seek(0)
         j = 0
@@ -30,8 +30,21 @@ class Command():
         
         self._hostname = host
         self._username = username
+        print
 
-        print(self._hostname)
-        print(self._username)
+        #print(self._hostname)
+        #print(self._username)
 
         return
+
+    def push_connections(self):
+        """
+        Command to ask if the user would like to save connections
+        """
+
+        text_file = open("_commands/info.csv", "a")
+        text_file.write(self._hostname + ", " + self._username + ",")
+        #print(self._hostname)
+        #print(self._username)
+
+
