@@ -8,6 +8,6 @@ class Command:
         """
         try:
             response = self._perform_ftp_command('put', fileName, preserve_mtime)
-			print "File uploaded Successfully"
-        exceptIOError as e:
+	    print "File uploaded Successfully"
+        except IOError as e:
             print "No such File exists: " + fileName
