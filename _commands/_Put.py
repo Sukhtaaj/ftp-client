@@ -1,5 +1,5 @@
 class Command:
-    def do_put(self, fileName, preserve_mtime=True):
+    def do_put(self, fileName):
         """
         copy file, to the current working directory on the server, preserving modification time
         Args:
@@ -7,7 +7,7 @@ class Command:
 			preserve_mtime (bool) :  will make sure that the modification times on the server copy match those on the local.
         """
         try:
-            response = self._perform_ftp_command('put', fileName, preserve_mtime)
+            response = self._perform_ftp_command('put', fileName)
 	    print "File uploaded Successfully"
         except IOError as e:
             print "No such File exists: " + fileName
