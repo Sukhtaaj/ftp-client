@@ -43,7 +43,7 @@ class Command():
         """
 
         text_file = open("_commands/info.csv", "a")
-        text_file.write(self._hostname + ", " + self._username + ",")
+        text_file.write(self._hostname + "," + self._username + ",")
         #print(self._hostname)
         #print(self._username)
 

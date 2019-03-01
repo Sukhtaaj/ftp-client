@@ -31,7 +31,7 @@ class Command:
                                               22, None, None, False, cnopts, None)
 
         #Clears the password so it'll be askes again
-        self._password = None; 
+        self._password = None
 
         if isinstance(response, str):
             print response
