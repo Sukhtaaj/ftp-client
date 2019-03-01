@@ -13,5 +13,5 @@ class Command:
 				for file in file_list:
 					response = self._perform_ftp_command('put', file)
 				print "File(s) uploaded Successfully"
-			exceptIOError as e:
+			except IOError as e:
               print(e)		
