@@ -1,13 +1,17 @@
 class Command:
-    def do_put(self, fileName):
+    def do_put(self, localPath):
         """
-        copy file, to the current working directory on the server, preserving modification time
+        copy file/files from current local path to the current working directory on the server
         Args:
             fileName (str): File to upload into current working directory of the remote host.
-			preserve_mtime (bool) :  will make sure that the modification times on the server copy match those on the local.
         """
-        try:
-            response = self._perform_ftp_command('put', fileName)
-	    print "File uploaded Successfully"
-        except IOError as e:
-            print "No such File exists: " + fileName
+		file_list = localPath.split(" ")
+		if len(file_list) < 1:
+            print ("Atleast one file/path expected")
+        else:
+			try:
+				for file in file_list:
+					response = self._perform_ftp_command('put', file)
+				print "File(s) uploaded Successfully"
+			except IOError as e:
+              print(e)		
