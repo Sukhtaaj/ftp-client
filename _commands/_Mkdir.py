@@ -13,6 +13,8 @@ class Command:
 		directory = self._perform_ftp_command('lexists',input_directory)
 		if directory:
 			print("duplicate found")
+			#print("mkdir1 " + input_directory) #turn into write to text file
 		else:
 			self._perform_ftp_command('mkdir',input_directory,777)
 			print(input_directory) #prints the name
+			#print("mkdir2 " + input_directory) #turn into write to text file
