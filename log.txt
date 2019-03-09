@@ -1,0 +1,20 @@
+None: ? 
+None: exit 
+None: ? 
+None: exit 
+None: ? 
+None: exit 
+None: ? 
+None: llist 
+None: exit 
+None: ? 
+Date: 03/09/19 Time: 13:08 User: None Input: ?None: login 
+Date: 03/09/19 Time: 13:09 User: None Input: logindanlee: ? 
+Date: 03/09/19 Time: 13:09 User: danlee Input: ?danlee: exit 
+Date: 03/09/19 Time: 13:09 User: danlee Input: exitNone: ? 
+Date: 03/09/19 Time: 13:09 User: None Input: ?None: login 
+Date: 03/09/19 Time: 13:09 User: None Input: logindemo: list 
+Date: 03/09/19 Time: 13:10 User: demo Input: listdemo: llist 
+Date: 03/09/19 Time: 13:10 User: demo Input: llistdemo: logout 
+Date: 03/09/19 Time: 13:10 User: demo Input: logoutNone: exit 
+Date: 03/09/19 Time: 13:10 User: None Input: exit

@@ -1,5 +1,6 @@
 import os
 import pysftp
+import datetime
 from cmd import Cmd
 
 import _commands._Login
@@ -35,7 +36,6 @@ class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _com
         self._hostname = None
         self._username = None
         self._password = None
-
     def _update_prompt(self):
         prompt = 'SFTP'
         if self._connection_object is not None:
@@ -67,5 +67,11 @@ class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _com
     def emptyline(self):
         pass
     def precmd(self,line):
-    	print('%s: %s' % (self._username,line))
+	f = open("log.txt","a+") #initialize log file
+    	f.write('%s: %s \n' % (self._username,line))
+	_date_time = datetime.datetime.now().strftime("Date: %m/%d/%y Time: %H:%M")
+	#print('%s User: %s Input: %s' % (_date_time,self._username,line)) #test output
+	f.write('%s User: %s Input: %s' % (_date_time,self._username,line))
+
+	f.close()#close loop
 	return line
