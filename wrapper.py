@@ -66,3 +66,6 @@ class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _com
 
     def emptyline(self):
         pass
+    def precmd(self,line):
+    	print('%s: %s' % (self._username,line))
+	return line
