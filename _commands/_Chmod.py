@@ -14,7 +14,12 @@ class Command:
           if len(input_args.split(" ")) == 2:
                 filepath = input_args.split(" ")[0]
                 permission = input_args.split(" ")[1]
-		directory = self._perform_ftp_command('chmod', filepath, permission)
+                try:
+		    self._perform_ftp_command('chmod', filepath, permission)
+                    print("Permissions changed successfully!")
+                except IOError as e:
+                    print "Failure"
+                    print(e.message)
           else:
                 print("Exactly two arguments expected")
 

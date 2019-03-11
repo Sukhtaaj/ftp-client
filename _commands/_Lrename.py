@@ -14,5 +14,6 @@ class Command:
 		else:
 			try: 
 				os.rename(path_src_dest[0], path_src_dest[1])
-			except IOError as e:
-				print(e)
+                                print ("Renamed: " + path_src_dest[0] + " -> " + path_src_dest[1])
+			except:
+				print("Failure")

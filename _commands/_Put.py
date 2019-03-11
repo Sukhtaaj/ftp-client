@@ -10,9 +10,10 @@ class Command:
         if len(file_list) < 1:
             print ("Atleast one file/path expected")
         else:
-            try:
-                for file in file_list:
-                        response = self._perform_ftp_command('put', file)
-                print "File(s) uploaded Successfully"
-            except IOError as e:
-                print(e.message)
+            for file in file_list:
+                try:
+                    response = self._perform_ftp_command('put', file)
+                    print("Uploaded file: " + file)
+                except IOError as e:
+                    print "Failure"
+                    print(e.message)

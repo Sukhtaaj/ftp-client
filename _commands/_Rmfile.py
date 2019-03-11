@@ -6,9 +6,9 @@ class Command:
         Args:
             filepath - path of the file to be deleted from the remote server.
         """
-		
-		
 		try: 
 			response = self._perform_ftp_command('remove', filepath)
+                        print("Deleted file: " + filepath)
 		except IOError as e:
-			print("File doesn't exist")
+                        print("Failure")
+			print(e.message)

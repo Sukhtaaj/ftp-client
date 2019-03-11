@@ -13,6 +13,7 @@ class Command:
 		else:
 			try: 
 				response=self._perform_ftp_command('rename',remote_src_dest[0], remote_src_dest[1])
+                                print ("Renamed: " + remote_src_dest[0] + " -> " + remote_src_dest[1])
 			except IOError as e:
-				print(e)
-		
+                                print("Failure")
+				print(e.message)

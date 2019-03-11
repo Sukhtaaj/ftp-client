@@ -16,5 +16,6 @@ class Command:
 			#print("mkdir1 " + input_directory) #turn into write to text file
 		else:
 			self._perform_ftp_command('mkdir',input_directory,777)
-			print(input_directory) #prints the name
+                        print("Created directory: " + input_directory)
+			#print(input_directory) #prints the name
 			#print("mkdir2 " + input_directory) #turn into write to text file

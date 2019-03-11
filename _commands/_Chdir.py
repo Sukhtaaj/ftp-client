@@ -8,5 +8,6 @@ class Command:
         """
         try:
             response = self._perform_ftp_command('chdir', remotepath or '.')
+            print("Current directory: " + remotepath)
         except IOError as e:
             print "No such directory as: " + remotepath + "\n"

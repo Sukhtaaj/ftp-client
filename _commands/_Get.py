@@ -10,8 +10,10 @@ class Command:
 		if len(file_list) < 1:
 			print ("Atleast one file/path expected")
 		else:
-		    try: 
-			for file in file_list:
- 		            response = self._perform_ftp_command('get', file)
-		    except IOError as e:
-			  print(e)
+		        for file in file_list:
+                                try:
+ 		                        response = self._perform_ftp_command('get', file)
+                                        print("Downloaded file: " + file)
+		                except IOError as e:
+                                        print "Failure"
+			                print(e.message)
