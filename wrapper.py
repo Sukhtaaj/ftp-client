@@ -46,33 +46,43 @@ class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _com
 
     def _perform_ftp_command(self, command, *args):
         if not self._connection_object:
-            method = getattr(self._ftp_client, command)
+            method = getattr(self._ftp_client, command, None)
         else:
-            method = getattr(self._connection_object, command)
-        try:
+            method = getattr(self._connection_object, command, None)
+
+        if method is not None:
+          try:
             response = method(*args)
         
-        except (ConnectionException,
-                CredentialException) as e:
+          except (ConnectionException,
+                  CredentialException) as e:
             response = e.message
-        except SSHException as e:
+          except SSHException as e:
             response = "Please check your hostname: {} \n".format(self._hostname)
-        except  AuthenticationException as e:
+          except  AuthenticationException as e:
             response = "Please make sure credentials are correct for user: {}\n".format(self._username)
-        except PasswordRequiredException as e:
+          except PasswordRequiredException as e:
             response = "Password is not provided."
+        else:
+            response = ""
 
         return response
 
 
     def emptyline(self):
         pass
-    def precmd(self,line):
-	f = open("log.txt","a+") #initialize log file
-    	f.write('%s: %s \n' % (self._username,line))
-	_date_time = datetime.datetime.now().strftime("Date: %m/%d/%y Time: %H:%M")
-	#print('%s User: %s Input: %s' % (_date_time,self._username,line)) #test output
-	f.write('%s User: %s Input: %s' % (_date_time,self._username,line))
 
-	f.close()#close loop
+    def precmd(self,line):
+        if self._connection_object is not None:
+            f = open("log.txt","a+") #initialize log file
+    	    #f.write('%s: %s \n' % (self._username,line))
+            _date_time = datetime.datetime.now().strftime("%m/%d/%y %H:%M:%S")
+	    #print('%s User: %s Input: %s' % (_date_time,self._username,line)) #test output
+	    f.write('[ %s - %s@%s ] %s\n' % (_date_time, self._username, self._hostname, line))
+
+	    f.close()#close loop
+        else:
+            f = open("log.txt", "a+")
+            _date_time = datetime.datetime.now().strftime("%m/%d/%y %H:%M:%S")
+            f.write('[ %s ] %s\n' % (_date_time, line))
 	return line

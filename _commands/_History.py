@@ -5,4 +5,6 @@ class Command:
         Command to print log history
 
         """
-	print("history")
+	f = open('log.txt', 'r')
+        print f.read()
+        f.close()
