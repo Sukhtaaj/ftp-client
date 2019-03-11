@@ -1,5 +1,5 @@
 class Command:
-	def do_getmultiple(self,remotepath):
+	def do_get(self,remotepath):
 		"""
         Command to get file(s) from the connectd FTP Host
 
