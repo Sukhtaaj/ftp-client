@@ -1,7 +1,7 @@
 class Command:
     def do_chdir(self, remotepath):
         """
-        Command to perform CHDIR command on the connected FTP host.
+        Command to chnage directory on the connected FTP host.
 
         Args:
             remotepath (str): Path of directory to change into.

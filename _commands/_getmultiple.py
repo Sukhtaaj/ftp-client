@@ -1,10 +1,10 @@
 class Command:
 	def do_getmultiple(self,remotepath):
 		"""
-        Command to perform get files command from the remote server.
+        Command to get file(s) from the connectd FTP Host
 
         Args:
-            filepath - path of the file to be deleted from the remote server.
+            filepath - path(s) of the file(s) to be downloaded from the remote server.
         """
 		file_list= remotepath.split(" ")
 		if len(file_list) < 1:

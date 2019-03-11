@@ -1,9 +1,10 @@
 class Command:
     def do_put(self, localPath):
         """
-        copy file/files from current local path to the current working directory on the server
+        Command to copy file(s) from local host to the connect FTP Host
+
         Args:
-            fileName (str): File to upload into current working directory of the remote host.
+            fileName (str): File(s) to upload into current working directory of the remote host.
         """
         file_list = localPath.split(" ")
         if len(file_list) < 1:

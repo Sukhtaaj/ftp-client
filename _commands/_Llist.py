@@ -2,10 +2,10 @@ import subprocess
 class Command:
     def do_llist(self, remotepath):
         """
-        Command to perform LIST command on the connected FTP host.
+        Command to list files/directories on the Local host.
 
         Args:
-            remotepath (str): Path of file or directory to retrieve info for.
+            remotepath (str): Path of file or directory to list info for.
         """
         try:
             cmd="dir"

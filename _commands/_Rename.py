@@ -1,10 +1,11 @@
 class Command:
 	def do_rename(self, remote_path):
 		"""
-        Command to perform Rename command on the connected FTP host.
+        Command to rename a file on the conected FTP Host.
 
         Args:
-            remote_path- return the string including the both source and destination
+            current_name of the file
+            new name of the file
         """
 		remote_src_dest=remote_path.split(" ")
 		if len(remote_src_dest)!=2:

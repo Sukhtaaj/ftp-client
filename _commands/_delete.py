@@ -1,7 +1,7 @@
 class Command:
 	def do_delete(self, filepath):
 		"""
-        Command to perform delete command on the connected FTP host.
+        Command to delete a file on the connected FTP host.
 
         Args:
             filepath - path of the file to be deleted from the remote server.

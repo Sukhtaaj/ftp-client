@@ -5,7 +5,7 @@ class Command:
         Command to create directory with name of new directory
 
 	Args:
-		input_directory (str): Name of directory you want to create
+	     directory_name (str): Name of directory you want to create
         """
 	if not input_directory:
 		print("you must enter in one argument")

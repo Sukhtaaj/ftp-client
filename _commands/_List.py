@@ -1,10 +1,10 @@
 class Command:
     def do_list(self, remotepath):
         """
-        Command to perform LIST command on the connected FTP host.
+        Command to list files/directories on the connected FTP host.
 
         Args:
-            remotepath (str): Path of file or directory to retrieve info for.
+            remotepath (str): Path of file or directory to list info for.
         """
         try:
             response = self._perform_ftp_command('listdir_attr', remotepath or '.')

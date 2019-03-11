@@ -6,3 +6,5 @@ class Command:
         if self._connection_object is not None:
             self.do_logout(self)
         return True
+
+    do_EOF = do_exit

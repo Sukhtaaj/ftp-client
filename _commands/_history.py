@@ -4,6 +4,5 @@ class Command:
         """
         Command to print log history
 
-	Args:
         """
 	print("history")
