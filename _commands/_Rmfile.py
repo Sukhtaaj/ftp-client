@@ -1,5 +1,5 @@
 class Command:
-	def do_delete(self, filepath):
+	def do_rmfile(self, filepath):
 		"""
         Command to delete a file on the connected FTP host.
 
@@ -11,4 +11,4 @@ class Command:
 		try: 
 			response = self._perform_ftp_command('remove', filepath)
 		except IOError as e:
-			print("File doesn't exists")
+			print("File doesn't exist")

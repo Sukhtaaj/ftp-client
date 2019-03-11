@@ -14,17 +14,18 @@ import _commands._Lrename
 import _commands._Mkdir
 import _commands._Put
 import _commands._ConnectionInfo
-import _commands._delete
+import _commands._Rmfile
 import _commands._Get
 import _commands._History
 import _commands._Chmod
+import _commands._Rmdir
 
 from paramiko import (SSHException, AuthenticationException, 
                       PasswordRequiredException)
 from pysftp.exceptions import (CredentialException, ConnectionException,
                                HostKeysException)
 
-class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _commands._List.Command, _commands._Exit.Command, _commands._Chdir.Command, _commands._Rename.Command, _commands._Llist.Command,  _commands._Lrename.Command, _commands._Mkdir.Command, _commands._Put.Command, _commands._ConnectionInfo.Command, _commands._delete.Command, _commands._Get.Command, _commands._History.Command, _commands._Chmod.Command):
+class SFTPWrapper(Cmd, _commands._Login.Command, _commands._Logout.Command, _commands._List.Command, _commands._Exit.Command, _commands._Chdir.Command, _commands._Rename.Command, _commands._Llist.Command,  _commands._Lrename.Command, _commands._Mkdir.Command, _commands._Put.Command, _commands._ConnectionInfo.Command, _commands._Rmfile.Command, _commands._Get.Command, _commands._History.Command, _commands._Chmod.Command, _commands._Rmdir.Command):
     """
     FTP client command line utility.
     """
