@@ -11,7 +11,9 @@ class Command:
 
         print "Press Enter for selecting default values\n"
         
-        user1 = raw_input("Use saved connection? (y/n): ")
+        user1 = None
+        while user1 != 'y' and user1 != 'Y' and user1 !='n' and user1 !='N':
+            user1 = raw_input("Use saved connection? (y/n): ")
 
         if user1 == 'y' or  user1 == 'Y':
             self.pull_connections()
@@ -39,8 +41,11 @@ class Command:
             print "Logged in successfully\n"
             self._connection_object = response
 
+            user2 = None
             if user1 == 'n' or  user1 == 'N':
-                user2 = raw_input("Would you like to save this connection? (y/n): ")
+                while user2 != 'y' and user2 != 'Y' and user2 !='n' and user2 !='N':
+                    user2 = raw_input("Would you like to save this connection? (y/n): ")
+
                 if user2 == 'y' or  user2 == 'Y':
                     self.push_connections()
 
