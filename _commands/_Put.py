@@ -16,4 +16,4 @@ class Command:
                     print("Uploaded file: " + file)
                 except IOError as e:
                     print "Failure"
-                    print(e.message)
+                    print(e)

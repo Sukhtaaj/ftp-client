@@ -11,4 +11,4 @@ class Command:
                         print("Deleted file: " + filepath)
 		except IOError as e:
                         print("Failure")
-			print(e.message)
+			print(e)

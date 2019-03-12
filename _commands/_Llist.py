@@ -8,7 +8,7 @@ class Command:
             remotepath (str): Path of file or directory to list info for.
         """
         try:
-            cmd="ls -al"
+            cmd="ls -l"
             process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             (result, error) = process.communicate()
             rc = process.wait()

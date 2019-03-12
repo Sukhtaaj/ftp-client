@@ -16,4 +16,4 @@ class Command:
                                         print("Downloaded file: " + file)
 		                except IOError as e:
                                         print "Failure"
-			                print(e.message)
+			                print(e)

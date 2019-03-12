@@ -13,4 +13,4 @@ class Command:
                         print("Deleted directory: " + dirpath)
 		except IOError as e:
                         print("Failure")
-			print(e.message)
+			print(e)

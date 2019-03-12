@@ -16,4 +16,4 @@ class Command:
                                 print ("Renamed: " + remote_src_dest[0] + " -> " + remote_src_dest[1])
 			except IOError as e:
                                 print("Failure")
-				print(e.message)
+				print(e)

@@ -5,7 +5,7 @@ class Command():
 
         """
         i = 0
-        text_file = open("_commands/info.csv", "r")
+        text_file = open("../_commands/info.csv", "r")
 
         for line in text_file:
             fields = line.split(",")

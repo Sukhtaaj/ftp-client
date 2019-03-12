@@ -19,7 +19,7 @@ class Command:
                     print("Permissions changed successfully!")
                 except IOError as e:
                     print "Failure"
-                    print(e.message)
+                    print(e)
           else:
                 print("Exactly two arguments expected")
 
