@@ -42,7 +42,7 @@ class Command():
         Command to ask if the user would like to save connections
         """
 
-        text_file = open("_commands/info.csv", "a")
+        text_file = open("../_commands/info.csv", "a")
         text_file.write(self._hostname + "," + self._username + ",")
         #print(self._hostname)
         #print(self._username)
